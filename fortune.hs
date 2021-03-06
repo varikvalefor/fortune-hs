@@ -1,4 +1,3 @@
-import Control.Monad
 import Data.List.Split;
 import System.Environment;
 import System.Random;
