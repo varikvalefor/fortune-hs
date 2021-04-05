@@ -4,7 +4,7 @@ import System.Random;
 
 nthFortune :: Int -> String -> String;
 nthFortune n f = g !! (mod n $ length g)
-  where g = splitOn "\n%\n" f
+  where g = splitOn "\n%%\n" f
 
 rando :: IO [Int];
 rando = newStdGen >>= return . randoms;
