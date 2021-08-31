@@ -3,7 +3,7 @@ import System.Environment;
 import System.Random;
 
 nthFortune :: Int -> String -> String;
-nthFortune n f = g !! (mod n $ length g)
+nthFortune n f = g !! (n `mod` length g)
   where g = splitOn "\n%%\n" f
 
 main :: IO ();
