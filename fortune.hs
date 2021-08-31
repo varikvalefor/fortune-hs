@@ -4,7 +4,9 @@ import System.Random;
 
 nthFortune :: Int -> String -> String;
 nthFortune n f = g !! (n `mod` length g)
-  where g = splitOn "\n%%\n" f
+  where
+  g :: [String]
+  g = splitOn "\n%%\n" f
 
 main :: IO ();
 main = getArgs >>= readFile . (!!0) >>= randomFortuneFrmFile >>= putStrLn;
