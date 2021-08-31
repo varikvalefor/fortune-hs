@@ -10,5 +10,9 @@ rando :: IO [Int];
 rando = newStdGen >>= return . randoms;
 
 main :: IO ();
-main = getArgs >>= readFile . (!!0) >>= \forfil ->
-  rando >>= \numb -> putStrLn $ nthFortune (numb !! 0) forfil;
+main = getArgs >>= readFile . (!!0) >>= putStrLn . randomFortuneFrmFile;
+
+-- | @randomFortuneFrmFile k@ extracts and returns a pseudorandom
+-- fortune from @k@.
+randomFortuneFrmFile :: FilePath -> IO ();
+randomFortuneFrmFile file= flip nthFortune file <$> randomIO;
