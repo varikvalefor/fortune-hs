@@ -20,7 +20,7 @@ nthFortune n f = g !! (n `mod` length g)
   g = splitOn "\n%%\n" f;
 
 main :: IO ();
-main = getArgs >>= readFile . (!!0) >>= randomFortuneFrmFile >>= putStrLn;
+main = getArgs >>= readFile . head >>= randomFortuneFrmFile >>= putStrLn;
 
 -- | @randomFortuneFrmFile k@ extracts and returns a pseudorandom
 -- fortune from @k@.
