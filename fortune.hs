@@ -4,7 +4,12 @@ import System.Random;
 
 -- | @nthFortune n f@ returns the @n@th fortune which is fetched from
 -- the 'String'-based fortune file content @f@.
-nthFortune :: Int -> String -> String;
+nthFortune :: Int
+           -- ^ The index of the fortune which should be output
+           -> String
+           -- ^ The content of the fortune file from which a fortune
+           -- should be fetched
+           -> String;
 nthFortune n f = g !! (n `mod` length g)
   where
   g :: [String]
