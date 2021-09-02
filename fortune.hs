@@ -20,9 +20,9 @@ nthFortune n f = g !! (n `mod` length g)
   g = splitOn "\n%%\n" f;
 
 main :: IO ();
-main = getArgs >>= readFile . head >>= randomFortuneFrmFile >>= putStrLn;
+main = getArgs >>= readFile . head >>= randFortuneFrmFile >>= putStrLn;
 
 -- | @randomFortuneFrmFile k@ extracts and returns a pseudorandom
 -- fortune from @k@.
-randomFortuneFrmFile :: FilePath -> IO ();
-randomFortuneFrmFile file= flip nthFortune file <$> randomIO;
+randFortuneFrmFile :: FilePath -> IO ();
+randFortuneFrmFile file= flip nthFortune file <$> randomIO;
