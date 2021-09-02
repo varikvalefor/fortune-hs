@@ -2,6 +2,8 @@ import Data.List.Split;
 import System.Environment;
 import System.Random;
 
+-- | @nthFortune n f@ returns the @n@th fortune which is fetched from
+-- the 'String'-based fortune file content @f@.
 nthFortune :: Int -> String -> String;
 nthFortune n f = g !! (n `mod` length g)
   where
