@@ -22,7 +22,7 @@ nthFortune n f = g !! (n `mod` length g)
 main :: IO ();
 main = getArgs >>= readFile . head >>= randFortuneFrmFile >>= putStrLn;
 
--- | @randomFortuneFrmFile k@ extracts and returns a pseudorandom
+-- | @randFortuneFrmFile k@ extracts and returns a pseudorandom
 -- fortune from @k@.
 randFortuneFrmFile :: FilePath -> IO ();
 randFortuneFrmFile file= flip nthFortune file <$> randomIO;
