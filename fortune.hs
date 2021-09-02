@@ -4,6 +4,10 @@ import System.Random;
 
 -- | @nthFortune n f@ returns the @n@th fortune which is fetched from
 -- the 'String'-based fortune file content @f@.
+--
+-- If @n@ exceeds the number of available fortunes, then the
+-- @n `mod` g@th fortune is output, where @g@ denotes the number of
+-- fortunes which @f@ contains.
 nthFortune :: Int
            -- ^ The index of the fortune which should be output
            -> String
