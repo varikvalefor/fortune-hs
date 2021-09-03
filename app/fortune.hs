@@ -24,5 +24,5 @@ main = getArgs >>= readFile . head >>= randFortuneFrmFile >>= putStrLn;
 
 -- | @randFortuneFrmFile k@ extracts and returns a pseudorandom
 -- fortune from @k@.
-randFortuneFrmFile :: FilePath -> IO ();
+randFortuneFrmFile :: FilePath -> IO String;
 randFortuneFrmFile file = flip nthFortune file <$> randomIO;
