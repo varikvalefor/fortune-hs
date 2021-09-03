@@ -13,8 +13,8 @@ maintainer: varikvalefor@aol.com
 copyright: (c) Varik Valefor 2021.
 category: Game
 
-executable fortune-hs
-  main-is: Main.hs
+executable fortune
+  main-is: fortune.hs
   build-depends:
     base ^>=4.14.1.0,
     split,
